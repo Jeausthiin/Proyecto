@@ -25,4 +25,9 @@ public class GimnasioServiceImpl implements GimnasioService {
         return (List<GimnasioMiembros>) gimnasioDao.findAll();
     }
 
+    @Override
+    public void saveMiembro(GimnasioMiembros miembro) {
+        gimnasioDao.save(miembro);
+    }
+
 }

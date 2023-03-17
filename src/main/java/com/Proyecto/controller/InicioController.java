@@ -4,11 +4,13 @@
  */
 package com.Proyecto.controller;
 
+import com.Proyecto.domain.GimnasioMiembros;
 import com.Proyecto.service.GimnasioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -16,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author Jeausthin
  */
 @Controller
-@RequestMapping("/gimnasio")
+@RequestMapping("/")
 public class InicioController {
 
     @Autowired
@@ -28,4 +30,16 @@ public class InicioController {
         model.addAttribute("miembros", miembros);
         return "/gimnasio/miembros";
     }
+    
+    @GetMapping("/miembronuevo")
+    public String agregarMiembro(GimnasioMiembros miembro){
+        return "/ModificarMiembro";
+    }
+    
+    @PostMapping("miembro/guardar")
+    public String guardarMiembro(GimnasioMiembros miembro){
+        gimnasioService.saveMiembro(miembro);
+        return "redirect:/miembros";
+    }
+    
 }

@@ -14,4 +14,6 @@ import java.util.List;
 public interface GimnasioService {
 
     public List<GimnasioMiembros> getMiembros();
+    
+    public void saveMiembro(GimnasioMiembros miembro);
 }

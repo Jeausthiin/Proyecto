@@ -5,12 +5,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html>
     <head>
-        <title>Pinga</title>
+        <title>Ping</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>Pinga</div>
+        <div>Ping</div>
         <div th:if="${miembros != null and !miembros.empty}">
             <table border="0">
                 <thead>
@@ -34,10 +34,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         </td>
                     </tr>
                 </tbody>
+                
             </table>
+            
         </div>
+        
+        <a th:href="@{/miembronuevo}">Agregar Miembro</a>
+        
         <div th:if="${miembros == null or miembros.empty}">
             <h3>No hay miembros que mostrar</h3>
+            <a th:hre="@{/miembronuevo}">Agregar Miembro</a>
         </div>
     </body>
 </html>
