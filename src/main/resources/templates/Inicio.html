@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Menú</title>
-</head>
-<body>
-    <header>
-        <h1>Gimnasio</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a th:href="@{/miembros}">Miembros</a></li>
-            <li><a th:href="@{/gimnasio/entrenadores}">Entrenadores</a></li>
-            <li><a th:href="@{/gimnasio/clases}">Clases</a></li>
-        </ul>
-    </nav>
-</body>
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Menu</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
+
+
+        <footer th:replace="~{layout/plantilla :: footer}"/>
+    </body>
 </html>

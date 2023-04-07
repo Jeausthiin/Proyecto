@@ -4,46 +4,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
 -->
 <html>
-    <head>
-        <title>Ping</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Miembros</title>
+        <meta charset="UTF-8"/>
     </head>
     <body>
-        <div>Ping</div>
-        <div th:if="${miembros != null and !miembros.empty}">
-            <table border="0">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellidos</th>
-                        <th>Numero Telefonico</th>
-                        <th>Tipo de membresia</th>
-                        <th>Metodo de pago</th>
-                        <th>Fecha de pago</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="miembro : ${miembros}">
-                        <td>[[${miembro.nombre}]]</td>
-                        <td>[[${miembro.apellidos}]]</td>
-                        <td>[[${miembro.numero}]]</td>
-                        <td>[[${miembro.membresia}]]</td>
-                        <td>[[${miembro.metodoPago}]]</td>
-                        <td>[[${miembro.fechaPago}]]</td>
-                        </td>
-                    </tr>
-                </tbody>
-                
-            </table>
-            
-        </div>
-        
-        <a th:href="@{/miembronuevo}">Agregar Miembro</a>
-        
-        <div th:if="${miembros == null or miembros.empty}">
-            <h3>No hay miembros que mostrar</h3>
-            <a th:hre="@{/miembronuevo}">Agregar Miembro</a>
-        </div>
+        <header th:replace="~{layout/plantilla :: header}"/>
+        <section th:replace="~{gimnasio/fragmentos :: botonesAgregar}"/>
+        <section th:replace="~{gimnasio/fragmentos :: agregarMiembro}"/>
+        <section th:replace="~{gimnasio/fragmentos :: listadoMiembros}"/>
+
+        <footer th:replace="~{layout/plantilla :: footer}"/>
     </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Modificar Miembro</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"></header>
+        <h3>Datos del miembro</h3>
+
+        <form th:action="@{miembro/guardar}"
+              method="post"
+              th:object="${miembro}">
+            <label>Nombre</label>
+            <input type="text"
+                   name="nombre"
+                   value="" />
+            <br>
+            <label>Apellidos</label>
+            <input type="text"
+                   name="apellidos"
+                   value="" />
+            <br>
+            <label>Numero</label>
+            <input type="int"
+                   name="numero"
+                   value="" />
+            <br>
+            <label>Membresia</label>
+            <input type="text"
+                   name="membresia"
+                   value="" />
+            <br>
+            <label>Metodo de Pago</label>
+            <input type="text"
+                   name="metodoPago"
+                   value="" />
+            <br>
+            <label>Fecha de Pago</label>
+            <input type="text"
+                   name="fechaPago"
+                   value="" />
+            <br>
+            <br><!-- comment -->
+            <input type="submit" value="Guardar" class="btn btn-success"/> <a th:href="@{/miembros}" class="btn btn-danger">Regresar</a>
+            <br><!-- comment -->
+        </form>
+
+        <footer th:replace="~{layout/plantilla :: footer}">
+    </body>
+</html>
