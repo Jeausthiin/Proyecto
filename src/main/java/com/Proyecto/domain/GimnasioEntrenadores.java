@@ -9,39 +9,42 @@ import jakarta.persistence.Table;
 import java.io.Serializable;
 import lombok.Data;
 
+
+
+
+
 /**
  *
  * @author Jeausthin
  */
 @Data
 @Entity
-@Table(name = "miembros")
-public class GimnasioMiembros implements Serializable {
+@Table(name = "entrenador")
+public class GimnasioEntrenadores implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idMiembro;
+    private long idEntrenador;
 
     private String nombre;
     private String apellidos;
     private int numero;
-    private String membresia;
-    private String metodoPago;
-    private String fechaPago;
+    private String direccion;
+    private int edad;
 
-    public GimnasioMiembros() {
+    public GimnasioEntrenadores() {
     }
 
-    public GimnasioMiembros(long idMiembro, String nombre, String apellidos, int numero, String membresia, String metodoPago, String fechaPago) {
-        this.idMiembro = idMiembro;
+    public GimnasioEntrenadores(long idEntrenador, String nombre, String apellidos, int numero, String direccion, int edad) {
+        this.idEntrenador = idEntrenador;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.numero = numero;
-        this.membresia = membresia;
-        this.metodoPago = metodoPago;
-        this.fechaPago = fechaPago;
+        this.direccion = direccion;
+        this.edad = edad;
     }
-    
+
+   
     
 }

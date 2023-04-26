@@ -4,6 +4,7 @@
  */
 package com.Proyecto.controller;
 
+import com.Proyecto.domain.GimnasioEntrenadores;
 import com.Proyecto.domain.GimnasioMiembros;
 import com.Proyecto.service.GimnasioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,7 @@ public class InicioController {
         gimnasioService.saveMiembro(miembro);
         return "redirect:/miembros";
     }
+    
+    
     
 }

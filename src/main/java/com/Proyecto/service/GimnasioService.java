@@ -5,15 +5,22 @@
 package com.Proyecto.service;
 
 import com.Proyecto.domain.GimnasioMiembros;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
- * @author Jeausthin
+ * @author johan
  */
 public interface GimnasioService {
-
+    
+    public List<GimnasioMiembros> listaMiembros=new ArrayList<>();
+    
     public List<GimnasioMiembros> getMiembros();
     
-    public void saveMiembro(GimnasioMiembros miembro);
+    public void save(GimnasioMiembros miembro);
+    
+    public void delete(GimnasioMiembros miembro);
+    
+    public GimnasioMiembros getMiembro(GimnasioMiembros miembro);
 }
