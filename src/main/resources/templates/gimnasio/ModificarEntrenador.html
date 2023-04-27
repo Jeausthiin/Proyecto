@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Modificar Entrenador</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"></header>
+        <h3>Datos del entrenador</h3>
+
+        <form th:action="@{entrenador/guardar}"
+              method="post"
+              th:object="${miembro}">
+            <label>Nombre</label>
+            <input type="text"
+                   name="nombre"
+                   value="" />
+            <br>
+            <label>Apellidos</label>
+            <input type="text"
+                   name="apellidos"
+                   value="" />
+            <br>
+            <label>Numero</label>
+            <input type="int"
+                   name="numero"
+                   value="" />
+            <br>
+            <label>Direccion</label>
+            <input type="text"
+                   name="direccion"
+                   value="" />
+            <br>
+            <label>Edad</label>
+            <input type="text"
+                   name="edad"
+                   value="" />
+            <br>
+            <br><!-- comment -->
+            <input type="submit" value="Guardar" class="btn btn-success"/> <a th:href="@{/entrenadores}" class="btn btn-danger">Regresar</a>
+            <br><!-- comment -->
+        </form>
+
+        <footer th:replace="~{layout/plantilla :: footer}">
+    </body>
+</html>

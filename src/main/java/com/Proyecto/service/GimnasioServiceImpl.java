@@ -4,8 +4,10 @@
  */
 package com.Proyecto.service;
 
+import com.Proyecto.dao.GimnasioDao;
 import com.Proyecto.domain.GimnasioMiembros;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,24 +20,28 @@ public class GimnasioServiceImpl implements GimnasioService {
 
     
     
+    @Autowired
+    private GimnasioDao clienteDao;
+    
+
     @Override
     public List<GimnasioMiembros> getMiembros() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return (List<GimnasioMiembros>) clienteDao.findAll();
     }
 
     @Override
     public void save(GimnasioMiembros miembro) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        clienteDao.save(miembro);
     }
 
     @Override
     public void delete(GimnasioMiembros miembro) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        clienteDao.delete(miembro);
     }
 
     @Override
     public GimnasioMiembros getMiembro(GimnasioMiembros miembro) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return clienteDao.findById(miembro.getIdMiembro()).orElse(null);
     }
     
 }

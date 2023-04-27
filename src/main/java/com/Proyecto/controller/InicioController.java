@@ -4,8 +4,8 @@
  */
 package com.Proyecto.controller;
 
-import com.Proyecto.domain.GimnasioEntrenadores;
-import com.Proyecto.domain.GimnasioMiembros;
+import com.Proyecto.domain.*;
+import com.Proyecto.service.EntrenadorService;
 import com.Proyecto.service.GimnasioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +24,11 @@ public class InicioController {
 
     @Autowired
     private GimnasioService gimnasioService;
+
+    @Autowired
+    private EntrenadorService entrenadorService;
+    
+
     
     @GetMapping("/miembros")
     public String inicio(Model model) {
@@ -32,6 +37,8 @@ public class InicioController {
         return "/gimnasio/miembros";
     }
     
+
+    
     @GetMapping("/miembronuevo")
     public String agregarMiembro(GimnasioMiembros miembro){
         return "/ModificarMiembro";
@@ -39,10 +46,7 @@ public class InicioController {
     
     @PostMapping("miembro/guardar")
     public String guardarMiembro(GimnasioMiembros miembro){
-        gimnasioService.saveMiembro(miembro);
+        gimnasioService.save(miembro);
         return "redirect:/miembros";
     }
-    
-    
-    
 }
