@@ -25,8 +25,6 @@ public class InicioController {
     @Autowired
     private GimnasioService gimnasioService;
 
-    @Autowired
-    private EntrenadorService entrenadorService;
     
 
     
